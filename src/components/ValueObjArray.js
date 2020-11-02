@@ -64,7 +64,16 @@ console.log(a + b.value);
 
 //Bai tap 2
 
-const doSomeThing2 = (obj, arr) => {};
+const doSomeThing2 = (obj, arr) => {
+  obj.value = 3500;
+  //a = 3500;
+  arr.push(obj.value);
+  //b = [ 2000, 1000, 3500]
+};
 
 const a = { value: 1000 };
 const b = [2000];
+b.push(a.value);
+//b = [ 2000, 1000 ]
+doSomeThing2(a, b);
+console.log(b);
