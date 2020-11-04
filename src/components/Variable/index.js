@@ -1,6 +1,7 @@
 import React from "react";
 
 function Variable() {
+  //Khai bao bien
   const fullName = "Nguyen Hoan Thuat";
   const age = 22;
 
