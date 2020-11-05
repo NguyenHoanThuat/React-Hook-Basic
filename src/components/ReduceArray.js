@@ -58,3 +58,51 @@ const nameItemOnly = (arr) => {
 };
 
 console.log(nameItemOnly(wishlist));
+
+// Given an array of arrays, flatten them into a single array
+
+/**
+ * Example:
+ * var arrays = [
+ *    ["1", "2", "3"],
+ *    [true],
+ *    [4, 5, 6]
+ *  ];
+ *
+ * flatten(arrays) // ["1", "2", "3", true, 4, 5, 6];
+ */
+
+const array = [["1", "2", "3"], [true], [4, 5, false]];
+
+const flatten = (arr) => {
+  return arr.reduce((key, newKey) => {
+    return key.concat(newKey);
+  }, []);
+};
+
+console.log(flatten(array));
+
+/**
+ * Count the occurrences of each element inside an array using reduce
+ * @params {array}
+ * @return {object}
+ * Example: 
+ * countOccurrences(['a', 'b', 'c', 'b', 'a']) // { a: 2, b: 2, c: 1 };
+ * { a : 1, b : 1, c : 1}
+}
+*/
+
+const checkName = (name) => {
+  const result = [];
+  const objName = [...name].reduce((key, newKey) => {
+    key[newKey] = key[newKey] + 1 || 1;
+    return key;
+  }, {});
+  // return objName;
+
+  return Object.keys(objName).reduce((a, b) => {
+    return objName[a] > objName[b] ? a : b;
+  });
+};
+
+console.log(checkName("nguenhoanthuat"));
