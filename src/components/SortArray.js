@@ -74,7 +74,7 @@ const sortScore = (arr) => {
   const sortScore = arr.sort((sort, score) => {
     return score.score - sort.score;
   });
-  return sortScore.slide(0, 3);
+  return sortScore.slice(0, 3);
 };
 
 console.log(sortScore(students));
