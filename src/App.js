@@ -5,6 +5,7 @@ import "./App.scss";
 import ColorBox from "./components/ColorBox";
 import PostList from "./components/PostList";
 import Pagination from "./components/Pagination";
+import PostFilterForm from "./components/PostFilterForm";
 
 function App() {
   const [postList, setPostList] = useState([]);
@@ -47,11 +48,21 @@ function App() {
     });
   };
 
+  const handleOnSubmit = (newFilter) => {
+    console.log("qqqqqqqq", newFilter);
+    setFilter({
+      ...filter,
+      _page: 1,
+      title_like: newFilter.search,
+    });
+  };
+
   return (
     <div className="App">
       <h1>React hook Post List!</h1>
 
       <ColorBox />
+      <PostFilterForm onSubmit={handleOnSubmit} />
       <PostList posts={postList} />
       <Pagination pagination={pagination} onPageChange={handlePageChange} />
     </div>
